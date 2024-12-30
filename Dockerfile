@@ -10,5 +10,5 @@ ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=ebt522
 
 # Expose Tomcat default port
-EXPOSE 8080
+EXPOSE 9090
 
