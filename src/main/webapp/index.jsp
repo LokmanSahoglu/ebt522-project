@@ -18,6 +18,11 @@
                         <h4>Kişi Kayıt Formu</h4>
                     </div>
                     <div class="card-body">
+                        <!-- Hata mesajı için yer -->
+                        <div class="alert alert-danger" role="alert" id="error-message" style="display: none;">
+                            Form gönderimi sırasında bir hata oluştu. Lütfen tekrar deneyin.
+                        </div>
+
                         <form action="RegisterServlet" method="post">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Ad:</label>
