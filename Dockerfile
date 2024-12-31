@@ -13,7 +13,7 @@ COPY "C:/Users/lokman.sahoglu/Servers/Tomcat v10.1 Server at localhost-config/se
 COPY ./src/main/webapp /usr/local/tomcat/webapps/ROOT
 
 # Tomcat'in varsayılan portunu expose ediyoruz
-EXPOSE 8080
+EXPOSE 9090
 
 # Tomcat server'ını başlatıyoruz
 CMD ["catalina.sh", "run"]
