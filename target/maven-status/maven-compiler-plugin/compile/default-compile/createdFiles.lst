@@ -1,0 +1,13 @@
+ebt522\servlets\LoginServlet.class
+ebt522\servlets\CreateCommentServlet.class
+ebt522\servlets\AddPersonServlet.class
+ebt522\servlets\DeletePhotoServlet.class
+ebt522\servlets\UploadVideoServlet.class
+ebt522\servlets\UploadPhotoServlet.class
+ebt522\servlets\DatabaseTest.class
+ebt522\servlets\CreateTopicServlet.class
+ebt522\servlets\AddStatusServlet.class
+ebt522\servlets\RegisterServlet.class
+ebt522\servlets\AddCommentServlet.class
+ebt522\servlets\EditPersonServlet.class
+ebt522\servlets\AddMessageServlet.class
