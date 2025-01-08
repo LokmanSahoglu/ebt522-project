@@ -1,69 +1,142 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kişi Kayıt Formu</title>
+    <title>Anasayfa</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .card-icon {
+            font-size: 80px;
+            margin-bottom: 10px;
+        }
+        .icon-kisi {
+            color: #3498db;  /* Mavi */
+        }
+        .icon-forum {
+            color: #9b59b6;  /* Mor */
+        }
+        .icon-list {
+            color: #e67e22;  /* Turuncu */
+        }
+        .icon-photo {
+            color: #2ecc71;  /* Yeşil */
+        }
+        .icon-video {
+            color: #e74c3c;  /* Kırmızı */
+        }
+        .icon-status {
+            color: #f1c40f;  /* Sarı */
+        }
+        .icon-map {
+            color: #1abc9c;  /* Turkuaz */
+        }
+    </style>
 </head>
 <body class="bg-light">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-header bg-primary text-white text-center">
-                        <h4>Kişi Kayıt Formu</h4>
-                    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.jsp">EBT522 Portal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.jsp">Oturum Aç</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.jsp">Kayıt Ol</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.jsp">Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <h1 class="display-4">EBT522 Portal Anasayfa</h1>
+            <p class="lead">Kişi bilgilerini, fotoğrafları, videoları ve durumları görüntüleyin veya ekleyin.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
                     <div class="card-body">
-                        <form action="RegisterServlet" method="post">
-                            <div class="mb-3">
-                                <label for="name" class="form-label">Ad:</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Adınızı giriniz" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="surname" class="form-label">Soyad:</label>
-                                <input type="text" class="form-control" id="surname" name="surname" placeholder="Soyadınızı giriniz" required>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Cinsiyet:</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="male" name="gender" value="male" required>
-                                    <label class="form-check-label" for="male">Erkek</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" id="female" name="gender" value="female" required>
-                                    <label class="form-check-label" for="female">Kadın</label>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="city" class="form-label">Şehir:</label>
-                                <select class="form-select" id="city" name="city" required>
-                                    <option selected disabled>Şehir seçin...</option>
-                                    <option value="istanbul">İstanbul</option>
-                                    <option value="ankara">Ankara</option>
-                                    <option value="izmir">İzmir</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Hobiler:</label><br>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="hobby1" name="hobbies" value="Spor">
-                                    <label class="form-check-label" for="hobby1">Spor</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="hobby2" name="hobbies" value="Müzik">
-                                    <label class="form-check-label" for="hobby2">Müzik</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="hobby3" name="hobbies" value="Kitap Okuma">
-                                    <label class="form-check-label" for="hobby3">Kitap Okuma</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Kayıt Ol</button>
-                        </form>
+                        <i class="fas fa-user-plus card-icon icon-kisi"></i>
+                        <h5 class="card-title mt-3">Kişi Kayıt</h5>
+                        <a href="addPerson.jsp" class="btn btn-primary">Kişi Ekle</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-comments card-icon icon-forum"></i>
+                        <h5 class="card-title mt-3">Forum</h5>
+                        <a href="forum.jsp" class="btn btn-primary">Forum Sayfası</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-users card-icon icon-list"></i>
+                        <h5 class="card-title mt-3">Kişiler</h5>
+                        <a href="persons.jsp" class="btn btn-primary">Kişi Listesi</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-images card-icon icon-photo"></i>
+                        <h5 class="card-title mt-3">Fotoğraflar</h5>
+                        <a href="photos.jsp" class="btn btn-success">Fotoğrafları Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-video card-icon icon-video"></i>
+                        <h5 class="card-title mt-3">Videolar</h5>
+                        <a href="videos.jsp" class="btn btn-success">Videoları Görüntüle</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-map-marker-alt card-icon icon-status"></i>
+                        <h5 class="card-title mt-3">Kim, Nerede, Ne Yapıyor?</h5>
+                        <a href="statuses.jsp" class="btn btn-warning">Durumlar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card shadow-sm text-center">
+                    <div class="card-body">
+                        <i class="fas fa-map card-icon icon-map"></i>
+                        <h5 class="card-title mt-3">Harita</h5>
+                        <a href="map.jsp" class="btn btn-danger">Haritayı Görüntüle</a>
                     </div>
                 </div>
             </div>
@@ -71,6 +144,6 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
